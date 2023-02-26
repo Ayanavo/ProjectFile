@@ -1,0 +1,11 @@
+<div class="container-fluid"><p>layout works!</p></div>
+
+<div class="wrapper">
+	<button mat-button class="feedback" [matMenuTriggerFor]="aboveMenu">
+		Chat
+	</button>
+</div>
+
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+	<chat-dialog></chat-dialog>
+</mat-menu>

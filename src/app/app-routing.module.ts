@@ -5,7 +5,7 @@ const routes: Routes = [
 	{
 		path: '',
 		loadChildren: () =>
-			import('./Modules/chat/chat.module').then((A) => A.ChatModule),
+			import('./Modules/layout/layout.module').then((A) => A.LayoutModule),
 	},
 	{ path: '**', redirectTo: '' },
 ];
