@@ -7,6 +7,7 @@ const routes: Routes = [
 		loadChildren: () =>
 			import('./Modules/layout/layout.module').then((A) => A.LayoutModule),
 	},
+
 	{ path: '**', redirectTo: '' },
 ];
 

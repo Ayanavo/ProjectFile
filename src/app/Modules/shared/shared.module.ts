@@ -3,17 +3,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ChatModule } from '../chat/chat.module';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
+import { SvgIconsComponent } from './svg-icons/svg-icons.component';
+import { ChatDialogComponent } from './chat-dialog/chat-dialog.component';
 
 @NgModule({
-	declarations: [],
+	declarations: [SvgIconsComponent, ChatDialogComponent],
 	imports: [
 		CommonModule,
 		NgbModule,
 		CustomMaterialModule,
 		FormsModule,
-		ChatModule,
 		ReactiveFormsModule,
 		HttpClientModule,
 	],
@@ -22,6 +22,8 @@ import { CustomMaterialModule } from '../custom-material/custom-material.module'
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
+		SvgIconsComponent,
+		ChatDialogComponent,
 	],
 })
 export class SharedModule {}

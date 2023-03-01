@@ -1,8 +1,8 @@
 <div class="container-fluid"><p>layout works!</p></div>
 
 <div class="wrapper">
-	<button mat-button class="feedback" [matMenuTriggerFor]="aboveMenu">
-		Chat
+	<button mat-fab class="feedback" (click)="openDialog()">
+		<app-svg-icons name="chat-support-svgrepo-com" fill="red"></app-svg-icons>
 	</button>
 </div>
 
