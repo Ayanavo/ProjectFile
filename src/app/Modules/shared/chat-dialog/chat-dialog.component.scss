@@ -12,6 +12,9 @@
 	background-color: #d7ffb158;
 	padding: 10px;
 }
+.client-info {
+	width: 100%;
+}
 .header p {
 	color: #008000;
 	font-weight: 100;
@@ -19,6 +22,7 @@
 	font-style: italic;
 }
 .header h2 {
+	display: flex;
 	color: #2e2e2e;
 	font-weight: bold;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -110,4 +114,15 @@
 	bottom: 105px;
 	padding: 0 15px;
 	font-size: small;
+}
+.close-btn {
+	padding: 10px;
+	z-index: 999;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.disable {
+	pointer-events: none;
+	opacity: 0.4;
 }

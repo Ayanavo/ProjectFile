@@ -19,7 +19,8 @@ export class ChatDialogComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.Master = JSON.parse(
-			localStorage.getItem('chat_log') || '[{ date: this.globaldate, msg: [] }]'
+			localStorage.getItem('chat_log') ||
+				JSON.stringify([{ date: this.globaldate, msg: [] }])
 		);
 		this.chat.valueChanges.subscribe((x) => {
 			this.activetext = x;
@@ -49,9 +50,7 @@ export class ChatDialogComponent implements OnInit {
 				this.i += 1;
 			}
 		}
-		console.log(this.Master);
 
-		// this.chatArray.push({ text: this.chat.value, time: new Date() });
 		this.chat.reset();
 		localStorage.setItem('chat_log', JSON.stringify(this.Master));
 	}

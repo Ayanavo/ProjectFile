@@ -13,6 +13,9 @@
 				<h2>Nebula</h2>
 				<span class="green-dot"></span>
 				<p>online</p>
+				<span class="close-btn">
+					<mat-icon mat-dialog-close matTooltip="close">cancel</mat-icon>
+				</span>
 			</span>
 		</div>
 	</div>
@@ -20,7 +23,15 @@
 	<div class="chats">
 		<div *ngFor="let day of Master">
 			<div class="date-info">
-				{{ day['date'] == globaldate ? 'Today' : globaldate }}
+				{{
+					day['date'] == globaldate
+						? 'Today'
+						: Number(this.globaldate.split('/')[0]) -
+								Number(this.Master[0]['date'].split('/')[0]) ==
+						  1
+						? 'Yesterday'
+						: globaldate
+				}}
 			</div>
 			<div *ngFor="let t of day['msg']">
 				<div class="client-chat" *ngIf="false">Hi!</div>
@@ -42,8 +53,13 @@
 			(keyup.enter)="getTextAll()"
 			(paste)="getTextAll()" />
 		<span class="action-button">
-			<mat-icon (click)="getTextAll()">send</mat-icon>
-			<mat-icon mat-dialog-close matTooltip="close chat">close</mat-icon>
+			<mat-icon
+				(click)="getTextAll()"
+				matTooltip="send"
+				[ngClass]="chat.value ? true : 'disable'"
+				>send</mat-icon
+			>
+			<mat-icon matTooltip="attach"> attach_file</mat-icon>
 		</span>
 	</div>
 </div>
