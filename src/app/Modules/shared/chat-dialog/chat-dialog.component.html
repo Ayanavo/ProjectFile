@@ -1,6 +1,49 @@
-<h1 mat-dialog-title>Delete file</h1>
-<div mat-dialog-content>Would you like to delete cat.jpeg?</div>
-<div mat-dialog-actions>
-	<button mat-button mat-dialog-close>No</button>
-	<button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+<div class="chat-box">
+	<!-- <h1 mat-dialog-title>Welcome</h1>
+	<div class="wrapper w-100" mat-dialog-content>
+		<input matInput class="form-control" placeholder="Write Someting..." />
+		<mat-icon mat-dialog-close>close</mat-icon>
+		<mat-icon cdkFocusInitial>add</mat-icon>
+		<mat-icon> attach_file</mat-icon>
+	</div> -->
+	<!-- chat-header -->
+	<div class="client">
+		<div class="client-info">
+			<span class="header">
+				<h2>Nebula</h2>
+				<span class="green-dot"></span>
+				<p>online</p>
+			</span>
+		</div>
+	</div>
+	<!-- chat-box -->
+	<div class="chats">
+		<div *ngFor="let day of Master">
+			<div class="date-info">
+				{{ day['date'] == globaldate ? 'Today' : globaldate }}
+			</div>
+			<div *ngFor="let t of day['msg']">
+				<div class="client-chat" *ngIf="false">Hi!</div>
+				<div class="my-chat" *ngIf="t">
+					{{ t['text'] }} {{ t['time'].split(':')[0] }}:{{
+						t['time'].split(':')[1]
+					}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- chat-footer -->
+
+	<div class="chat-input">
+		<div class="activechat" *ngIf="activetext">typing...</div>
+		<input
+			placeholder="Enter Message"
+			[formControl]="chat"
+			(keyup.enter)="getTextAll()"
+			(paste)="getTextAll()" />
+		<span class="action-button">
+			<mat-icon (click)="getTextAll()">send</mat-icon>
+			<mat-icon mat-dialog-close matTooltip="close chat">close</mat-icon>
+		</span>
+	</div>
 </div>
